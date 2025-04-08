@@ -1,0 +1,31 @@
+#for public attribute
+class A:
+    def __init__(self,name,pin):
+        self.pin=pin
+
+    def showpin(self):
+        return self.pin
+obj=A("Hi",1234)
+print(obj.showpin())
+
+#for private attribute
+class A:
+    def __init__(self,name,__pin):
+        self.name=name
+        self.__pin=__pin
+
+    def showpin(self):
+        return self.__pin
+obj=A("Hi",1234)
+print(obj.showpin())
+
+#for protected(super key)
+class A:
+    _var=2
+
+class B(A):
+    def test(self):
+        return super()._var
+
+obj=B()
+print(obj._var)
