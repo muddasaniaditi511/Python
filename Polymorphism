@@ -1,0 +1,9 @@
+class A:
+    def wish(self):
+        print("Hi")
+class B(A):
+    def wish(self):
+        print("Hello")
+
+obj=B()
+obj.wish()
