@@ -1,0 +1,6 @@
+row, col = map(int, input().split())
+arr = []
+for _ in range(row):
+    arr.append(list(map(int, input().split())))
+
+print(arr)
