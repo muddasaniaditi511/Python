@@ -1,0 +1,11 @@
+def Solution(x,n):
+    if(n<0): #T>C:- O(N)
+        x=1/x
+    n=abs(n)
+    ans=1
+    for i in range(n):   #Here time limit exceeds 
+        ans=ans*x
+    return ans
+x=float(input())
+n=int(input())
+print(Solution(x,n))
