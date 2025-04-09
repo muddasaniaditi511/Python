@@ -1,0 +1,13 @@
+    def generateParenthesis(self,n):
+        ans=[]
+        ind = 0
+        open = 0
+        close = 0
+        self.generate("",ind,n,ans,open,close)
+        return ans
+obj= Solution()
+n=int(input())
+print(obj.generateParenthesis(n))
+
+        
+
