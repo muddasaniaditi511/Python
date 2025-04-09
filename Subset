@@ -1,0 +1,10 @@
+def subset(self,nums):
+        ans=[]
+        current=[]
+        ind=0
+        n=len(nums)
+        self.generate(ind,ans,current,nums,n)
+        return ans
+obj=Solution()
+nums=list(map(int,input().split()))
+print(obj.subset(nums))
