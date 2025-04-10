@@ -1,0 +1,33 @@
+class ListNode:
+    def __init__(self, val=0):
+        self.val = val
+        self.next = None
+
+def is_cyclic(head):
+    slow = head  
+    fast = head  
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+
+# Create nodes
+a = ListNode(1)
+b = ListNode(2)
+c = ListNode(3)
+d = ListNode(4)
+
+# Link nodes in a cycle: a -> b -> c -> d -> b (cycle)
+a.next = b
+b.next = c
+c.next = d
+d.next = b  # Creates a cycle here
+
+# Call the function
+print(is_cyclic(a))  # Output: True
+
+# Now create a non-cyclic list: a -> b -> c -> d -> None
+d.next = None  # Break the cycle
+print(is_cyclic(a))  # Output: False
