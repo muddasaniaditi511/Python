@@ -1,0 +1,21 @@
+class Node:
+    def __init__(self,data):
+        self.val=data                     #Node creation for first four line
+        self.next=None
+def createLinkedList(arr):
+    head=None
+    for data in arr:
+        if(head==None):
+            head=Node(data)
+            temp=head
+        else:
+            temp.next=Node(data)
+            temp=temp.next
+    printLinkedList(head)
+def printLinkedList(head):
+      temp=head
+      while(temp):
+        print(temp.val)
+        temp=temp.next
+arr=list(map(int,input().split()))
+createLinkedList(arr)
