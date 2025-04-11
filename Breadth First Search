@@ -1,0 +1,29 @@
+class Solution:
+    def breadthFirstSearch(self,i,visited,adj,ans):
+        q=[i]
+        while(q):
+            node=q.pop(0) #0
+            ans.append(node)
+            for it in adj[node]:
+                if(visited[it]==0):
+                    visited[it]=1
+                    q.append(it)
+#Function to return Breadth First Search Traversal of given
+    def bfs(self,adj):
+        vertex=len(adj)
+        ans=[]
+        visited=[0]*vertex
+        for i in range(vertex):
+              if(visited[i]==0):
+                   visited[i] = 1
+                   self.breadthFirstSearch(i,visited,adj,ans)
+        return ans
+adj=[
+    [1],#neighbour of 0
+    [0,2,3],#neighbour of 1
+    [1],#neighbour of 2
+    [1]#neighbour of 3
+    ]
+obj=Solution()
+result=obj.bfs(adj)
+print(result)
