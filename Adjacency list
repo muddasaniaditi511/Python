@@ -1,0 +1,27 @@
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+
+    def add_vertex(self, vertex):
+        if vertex not in self.adj_list:
+            self.adj_list[vertex] = []
+
+    def add_edge(self, src, dest, bidirectional=True):
+        self.add_vertex(src)
+        self.add_vertex(dest)
+        self.adj_list[src].append(dest)
+        if bidirectional:
+            self.adj_list[dest].append(src)
+
+    def print_graph(self):
+        for vertex in self.adj_list:
+            print(f"{vertex} -> {self.adj_list[vertex]}")
+
+g = Graph()
+g.add_edge("A", "B")
+g.add_edge("A", "C")
+g.add_edge("B", "D")
+g.add_edge("C", "D")
+g.add_edge("E", "F")  # Disconnected component
+
+g.print_graph()
