@@ -1,0 +1,14 @@
+import math
+def addFraction(num1,num2,den1,den2):
+    n=(num1*den2)+(num2*den1)
+    d=(den1*den2)
+    c=math.gcd(n,d)
+    n//=c
+    d//=c
+    print(f"{n}/{d}")
+num1=int(input())
+num2=int(input())
+den1=int(input())
+den2=int(input())
+addFraction(num1,num2,den1,den2)
+    
