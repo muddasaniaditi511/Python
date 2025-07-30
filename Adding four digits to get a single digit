@@ -1,0 +1,13 @@
+def singleDigit(n):
+    while n>=10:
+        Sum = 0
+        while n> 0:
+            r= n% 10
+            Sum += r
+            n =n//10
+        n = Sum
+    return Sum
+n= int(input())
+result=singleDigit(n)
+print(result)
+     
