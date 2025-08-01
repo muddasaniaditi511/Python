@@ -1,0 +1,19 @@
+class Solution:
+    def generate(self,ind,curr_subset,ans,nums):
+        if(ind==len(nums)):
+            ans.append(curr_subset.copy())
+            return
+        curr_subset.append(nums[ind])
+        self.generate(ind+1,curr_subset,ans,nums)
+        curr_subset.pop()
+        self.generate(ind+1,curr_subset,ans,nums)
+    def  subsets(self,nums):
+                 ind=0
+                 curr_subset =[]
+                 ans=[]
+                 self.generate(ind,curr_subset,ans,nums)
+                 return ans
+
+nums=list(map(int,input().split()))
+sol=Solution()
+print(sol.subsets(nums))
