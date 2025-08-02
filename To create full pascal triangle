@@ -1,0 +1,14 @@
+def generateRow(row):
+    ans=1
+    result=[ans]    #generate pascal triangle
+    for col in range(1,row):
+       ans=ans*(row-col)
+       ans=ans//(col)
+       result.append(ans)
+    return result
+finalResult=[]
+rows=int(input("Enter the number of rows:"))
+for row in range(1,rows+1):
+    finalResult.append(generateRow(row))
+for lst in finalResult:
+    print(*lst)
