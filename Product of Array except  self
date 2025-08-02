@@ -1,0 +1,9 @@
+nums=list(map(int,input().split()))
+n=len(nums)
+ans=[]
+prod=1
+for i in nums:
+    prod=prod*i
+for i in nums:
+    ans.append(prod//i)
+print(ans)
